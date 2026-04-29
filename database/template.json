@@ -1,0 +1,156 @@
+{
+  "versao": "1.0",
+  "tabela": "transacoes_financeiras",
+  "descricao": "Template de validacao para arquivos CSV de transacoes financeiras",
+  "colunas": {
+    "id_transacao": {
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Identificador unico da transacao",
+      "validacao": {
+        "pattern": "^[A-Za-z0-9\\-]{8,36}$",
+        "min_length": 8,
+        "max_length": 36
+      },
+      "aliases": ["id", "transaction_id", "cod_transacao", "codigo"]
+    },
+    "data_transacao": {
+      "tipo": "date",
+      "obrigatorio": true,
+      "descricao": "Data em que a transacao ocorreu",
+      "validacao": {
+        "formato_esperado": "YYYY-MM-DD",
+        "formatos_aceitos": ["YYYY-MM-DD", "DD/MM/YYYY", "DD-MM-YYYY", "MM/DD/YYYY"]
+      },
+      "aliases": ["data", "date", "dt_transacao", "transaction_date"]
+    },
+    "valor": {
+      "tipo": "decimal",
+      "obrigatorio": true,
+      "descricao": "Valor da transacao (sempre positivo)",
+      "validacao": {
+        "min": 0.01,
+        "max": 999999999.99,
+        "casas_decimais": 2,
+        "formatos_aceitos": ["1234.56", "1234,56", "1.234,56", "R$ 1.234,56", "R$1234,56"]
+      },
+      "aliases": ["amount", "vlr", "vl_transacao", "value"]
+    },
+    "tipo": {
+      "tipo": "enum",
+      "obrigatorio": true,
+      "descricao": "Tipo da transacao",
+      "validacao": {
+        "valores_permitidos": ["CREDITO", "DEBITO"],
+        "mapeamento": {
+          "C": "CREDITO",
+          "D": "DEBITO",
+          "CREDIT": "CREDITO",
+          "DEBIT": "DEBITO",
+          "credit": "CREDITO",
+          "debit": "DEBITO",
+          "credito": "CREDITO",
+          "debito": "DEBITO",
+          "entrada": "CREDITO",
+          "saida": "DEBITO"
+        }
+      },
+      "aliases": ["type", "tp_transacao", "transaction_type"]
+    },
+    "categoria": {
+      "tipo": "enum",
+      "obrigatorio": true,
+      "descricao": "Categoria da transacao",
+      "validacao": {
+        "valores_permitidos": [
+          "SALARIO",
+          "ALIMENTACAO",
+          "TRANSPORTE",
+          "MORADIA",
+          "SAUDE",
+          "EDUCACAO",
+          "LAZER",
+          "INVESTIMENTO",
+          "TRANSFERENCIA",
+          "OUTROS"
+        ],
+        "mapeamento": {
+          "salary": "SALARIO",
+          "food": "ALIMENTACAO",
+          "transport": "TRANSPORTE",
+          "housing": "MORADIA",
+          "health": "SAUDE",
+          "education": "EDUCACAO",
+          "leisure": "LAZER",
+          "investment": "INVESTIMENTO",
+          "transfer": "TRANSFERENCIA",
+          "other": "OUTROS",
+          "outros": "OUTROS"
+        }
+      },
+      "aliases": ["category", "cat", "categoria_transacao"]
+    },
+    "descricao": {
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Descricao ou observacao da transacao",
+      "validacao": {
+        "max_length": 255
+      },
+      "aliases": ["description", "desc", "obs", "observacao", "memo"]
+    },
+    "conta_origem": {
+      "tipo": "string",
+      "obrigatorio": true,
+      "descricao": "Codigo da conta de origem",
+      "validacao": {
+        "pattern": "^[A-Za-z0-9\\-]{4,20}$",
+        "min_length": 4,
+        "max_length": 20
+      },
+      "aliases": ["source_account", "conta_src", "from_account", "origem"]
+    },
+    "conta_destino": {
+      "tipo": "string",
+      "obrigatorio": false,
+      "descricao": "Codigo da conta de destino (para transferencias)",
+      "validacao": {
+        "pattern": "^[A-Za-z0-9\\-]{4,20}$",
+        "min_length": 4,
+        "max_length": 20
+      },
+      "aliases": ["target_account", "conta_dst", "to_account", "destino"]
+    },
+    "status": {
+      "tipo": "enum",
+      "obrigatorio": true,
+      "descricao": "Status atual da transacao",
+      "validacao": {
+        "valores_permitidos": ["PENDENTE", "CONFIRMADO", "CANCELADO"],
+        "default": "CONFIRMADO",
+        "mapeamento": {
+          "pending": "PENDENTE",
+          "confirmed": "CONFIRMADO",
+          "cancelled": "CANCELADO",
+          "canceled": "CANCELADO",
+          "P": "PENDENTE",
+          "C": "CONFIRMADO",
+          "X": "CANCELADO"
+        }
+      },
+      "aliases": ["state", "situacao", "st_transacao"]
+    }
+  },
+  "regras_validacao": {
+    "encoding_esperado": "utf-8",
+    "delimitador_esperado": ",",
+    "delimitadores_aceitos": [",", ";", "\\t"],
+    "tem_cabecalho": true
+  },
+  "mensagens_erro": {
+    "coluna_obrigatoria_ausente": "A coluna '{coluna}' e obrigatoria e nao foi encontrada no arquivo",
+    "formato_data_invalido": "A coluna '{coluna}' contem datas em formato invalido. Esperado: YYYY-MM-DD",
+    "valor_fora_range": "A coluna '{coluna}' contem valores fora do range permitido",
+    "enum_invalido": "A coluna '{coluna}' contem valor '{valor}' que nao esta na lista de valores permitidos"
+  }
+}

@@ -1,0 +1,16 @@
+id,date,amount,type,category,description,source_account,target_account,state
+TRX-301-2024,2024-01-15,1500.00,CREDIT,salary,Salario janeiro,CC-12345,,confirmed
+TRX-302-2024,2024-01-16,45.90,DEBIT,food,Supermercado,CC-12345,,confirmed
+TRX-303-2024,2024-01-17,150.00,DEBIT,transport,Combustivel,CC-12345,,confirmed
+TRX-304-2024,2024-01-18,800.00,DEBIT,housing,Aluguel parcial,CC-12345,,confirmed
+TRX-305-2024,2024-01-19,120.50,DEBIT,health,Farmacia,CC-12345,,confirmed
+TRX-306-2024,2024-01-20,250.00,DEBIT,education,Curso online,CC-12345,,confirmed
+TRX-307-2024,2024-01-21,89.90,DEBIT,leisure,Cinema e jantar,CC-12345,,confirmed
+TRX-308-2024,2024-01-22,500.00,DEBIT,investment,Aporte mensal,CC-12345,INV-98765,confirmed
+TRX-309-2024,2024-01-23,200.00,DEBIT,transfer,Transferencia PIX,CC-12345,CC-67890,pending
+TRX-310-2024,2024-01-24,35.00,DEBIT,other,Taxa bancaria,CC-12345,,confirmed
+TRX-311-2024,2024-01-25,2500.00,CREDIT,salary,Bonus,CC-12345,,confirmed
+TRX-312-2024,2024-01-26,67.80,DEBIT,food,Restaurante,CC-12345,,confirmed
+TRX-313-2024,2024-01-27,220.00,DEBIT,transport,Manutencao carro,CC-12345,,confirmed
+TRX-314-2024,2024-01-28,450.00,DEBIT,housing,Condominio,CC-12345,,confirmed
+TRX-315-2024,2024-01-29,85.00,DEBIT,health,Consulta medica,CC-12345,,cancelled

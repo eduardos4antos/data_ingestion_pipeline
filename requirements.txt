@@ -1,0 +1,18 @@
+# Interface
+streamlit>=1.52.0
+
+# Manipulacao de dados
+pandas>=2.0.0
+
+# Testes
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Deteccao de encoding
+chardet>=5.2.0
+
+# Google Gemini
+google-genai>=1.0.0
+
+# Variaveis de ambiente
+python-dotenv>=1.0.0

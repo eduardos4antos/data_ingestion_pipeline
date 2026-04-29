@@ -1,0 +1,16 @@
+id,data,amount,type,category,obs,source_account,target_account,state,extra_col
+TRX-901-2024,15/01/2024,"R$ 1.500,00",C,salary,Salario janeiro,CC-12345,,P,ignorar
+TRX-902-2024,16/01/2024,"45,90",D,food,Supermercado,CC-12345,,C,ignorar
+TRX-903-2024,17-01-2024,"R$ 150,00",D,transport,Combustivel,CC-12345,,C,ignorar
+TRX-904-2024,18/01/2024,"800,00",D,housing,Aluguel parcial,CC-12345,,C,ignorar
+TRX-905-2024,19-01-2024,"R$ 120,50",D,health,Farmacia,CC-12345,,C,ignorar
+TRX-906-2024,20/01/2024,"250,00",D,education,Curso online,CC-12345,,C,ignorar
+TRX-907-2024,21/01/2024,"R$ 89,90",D,leisure,Cinema e jantar,CC-12345,,C,ignorar
+TRX-908-2024,22-01-2024,"R$ 500,00",D,investment,Aporte mensal,CC-12345,INV-98765,C,ignorar
+TRX-909-2024,23/01/2024,"200,00",D,transfer,Transferencia PIX,CC-12345,CC-67890,P,ignorar
+TRX-910-2024,24/01/2024,"R$ 35,00",D,other,Taxa bancaria,CC-12345,,C,ignorar
+TRX-911-2024,25-01-2024,"R$ 2.500,00",C,salary,Bonus,CC-12345,,C,ignorar
+TRX-912-2024,26/01/2024,"67,80",D,food,Restaurante,CC-12345,,C,ignorar
+TRX-913-2024,27/01/2024,"R$ 220,00",D,transport,Manutencao carro,CC-12345,,C,ignorar
+TRX-914-2024,28-01-2024,"R$ 450,00",D,housing,Condominio,CC-12345,,C,ignorar
+TRX-915-2024,29/01/2024,"85,00",D,health,Consulta medica,CC-12345,,X,ignorar
